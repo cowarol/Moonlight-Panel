@@ -1,0 +1,83 @@
+{
+  "Name": "Minecraft Paper",
+  "Author": "contact@tnsjesper.xyz",
+  "UpdateUrl": "https://raw.githubusercontent.com/nexocrew-HQ/MoonlightImages/refs/heads/main/games/minecraft/MinecraftPaper.json",
+  "DonateUrl": "https://ko-fi.com/tnsjesper",
+  "StartupCommand": "java --add-modules=jdk.incubator.vector -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
+  "OnlineDetection": "Done",
+  "StopCommand": "stop",
+  "InstallShell": "/bin/bash",
+  "InstallDockerImage": "debian:latest",
+  "InstallScript": "#!/bin/bash\r\n# Paper Installation Script\r\n#\r\necho -e \"Started Installation\"\r\n\r\napt update\r\napt -y install curl jq\r\n\r\n# Server Files: /mnt/server\r\nPROJECT=paper\r\n\r\nif [ \"${MINECRAFT_VERSION}\" == \"latest\" ]; then\r\n    LATEST_VERSION=$(curl -s https://api.papermc.io/v2/projects/${PROJECT} | jq -r '.versions[-1]')\r\n    MINECRAFT_VERSION=${LATEST_VERSION}\r\nfi\r\n\r\nGET_BUILD=$(curl -s https://api.papermc.io/v2/projects/${PROJECT}/versions/${MINECRAFT_VERSION} | jq -r '.builds[-1]')\r\nBUILD_NUMBER=${GET_BUILD}\r\n\r\n\r\nJAR_NAME=${PROJECT}-${MINECRAFT_VERSION}-${BUILD_NUMBER}.jar\r\n\r\necho \"Version being downloaded\"\r\necho -e \"MC Version: ${MINECRAFT_VERSION}\"\r\necho -e \"Build: ${BUILD_NUMBER}\"\r\necho -e \"JAR Name of Build: ${JAR_NAME}\"\r\nDOWNLOAD_URL=https://api.papermc.io/v2/projects/${PROJECT}/versions/${MINECRAFT_VERSION}/builds/${BUILD_NUMBER}/downloads/${JAR_NAME}\r\n\r\ncd /mnt/server\r\n\r\necho -e \"Running curl -o ${SERVER_JARFILE} ${DOWNLOAD_URL}\"\r\n\r\nif [ -f ${SERVER_JARFILE} ]; then\r\n    mv ${SERVER_JARFILE} ${SERVER_JARFILE}.old\r\nfi\r\n\r\ncurl -o ${SERVER_JARFILE} ${DOWNLOAD_URL}\r\n",
+  "ParseConfiguration": "[{\"Type\":\"properties\",\"File\":\"server.properties\",\"Configuration\":{\"server-ip\":\"0.0.0.0\",\"server-port\":\"{{SERVER_PORT}}\"}},{\"Type\":\"properties\",\"File\":\"eula.txt\",\"Configuration\":{\"eula\":\"true\"}}]",
+  "AllocationsNeeded": 1,
+  "Variables": [
+    {
+      "Key": "MINECRAFT_VERSION",
+      "DefaultValue": "latest",
+      "DisplayName": "Minecraft Version",
+      "Description": "Your minecraft version for the server",
+      "AllowView": true,
+      "AllowEdit": true,
+      "Filter": null
+    },
+    {
+      "Key": "SERVER_JARFILE",
+      "DefaultValue": "server.jar",
+      "DisplayName": "Server Jar File",
+      "Description": "The jarfile your server is executing",
+      "AllowView": true,
+      "AllowEdit": true,
+      "Filter": null
+    }
+  ],
+  "DefaultDockerImage": 0,
+  "AllowDockerImageChange": true,
+  "DockerImages": [
+    {
+      "DisplayName": "Java 19",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java19",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 20",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java20",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 21",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java21",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 22",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java22",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 8",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java8",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 11",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java11",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 16",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java16",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 17",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java17",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 18",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java18",
+      "AutoPull": true
+    }
+  ]
+}
