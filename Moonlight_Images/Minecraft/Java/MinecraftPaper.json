@@ -35,48 +35,48 @@
   "AllowDockerImageChange": true,
   "DockerImages": [
     {
-      "DisplayName": "Java 19",
-      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java19",
+      "DisplayName": "Java 22",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java22",
       "AutoPull": true
     },
     {
       "DisplayName": "Java 20",
-      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java20",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java20",
       "AutoPull": true
     },
     {
       "DisplayName": "Java 21",
-      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java21",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java21",
       "AutoPull": true
     },
     {
-      "DisplayName": "Java 22",
-      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java22",
+      "DisplayName": "Java 19",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java19",
       "AutoPull": true
     },
     {
       "DisplayName": "Java 8",
-      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java8",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java8",
       "AutoPull": true
     },
     {
       "DisplayName": "Java 11",
-      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java11",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java11",
       "AutoPull": true
     },
     {
       "DisplayName": "Java 16",
-      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java16",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java16",
       "AutoPull": true
     },
     {
       "DisplayName": "Java 17",
-      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java17",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java17",
       "AutoPull": true
     },
     {
       "DisplayName": "Java 18",
-      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java18",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java18",
       "AutoPull": true
     }
   ]

@@ -3,3 +3,4 @@
 ### Minecraft
 - ![Paper](Pterodactyl_eggs/Minecraft/Java/paper_egg.json)
 ## Moonlight Images
+- ![Paper](Moonlight_Images/Minecraft/Java/MinecraftPaper.json)
