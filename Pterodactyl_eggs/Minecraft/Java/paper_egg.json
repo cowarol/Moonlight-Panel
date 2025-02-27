@@ -5,7 +5,7 @@
         "update_url": null
     },
     "exported_at": "2024-02-13T17:26:13+0000",
-    "name": "cowarol_Paper",
+    "name": "Cowarol_Paper",
     "author": "Cowarol",
     "description": "High performance Spigot fork that aims to fix gameplay and mechanics inconsistencies.",
     "UpdateUrl": "https://raw.githubusercontent.com/cowarol/Moonlight-Panel/refs/heads/main/Pterodactyl_eggs/Minecraft/Java/paper_egg.json",
